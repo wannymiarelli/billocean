@@ -1,6 +1,45 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900");
+body, html {
+  font-family: 'Rubik', sans-serif;
+  height: 100%; }
 
-a {
-  color: #00B7FF; }
+#app {
+  height: 100%; }
+
+.valign-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%; }
+  .valign-wrapper .valign {
+    display: table-cell;
+    vertical-align: middle; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+i {
+  vertical-align: middle; }
+
+.btn {
+  border-radius: 3px;
+  padding: 0.6em; }
+  .btn.btn-primary {
+    background-color: #0D47A1;
+    color: #FFF; }
+  .btn.btn-extended {
+    width: 100%; }
+  .btn:focus {
+    outline: 0; }
+
+.input-wrapper input {
+  box-shadow: none;
+  border: 0;
+  border-bottom: 2px solid #EEE;
+  padding: 0;
+  transition: all 0.5s ease-in-out; }
+  .input-wrapper input:focus {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid #0D47A1; }
