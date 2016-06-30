@@ -5,8 +5,24 @@ module.exports = function(sequelize, DataTypes){
       type: DataTypes.UUID,
       primaryKey: true
     },
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      notEmpty: true,
+      required: true,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      required: true,
+      allowNull: false,
+      validate: {
+        min: 3,
+        notEmpty: true
+      }
+    },
     name: DataTypes.STRING,
     avatarlUrl: DataTypes.STRING,
     active: DataTypes.BOOLEAN
