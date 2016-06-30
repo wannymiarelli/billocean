@@ -1,8 +1,17 @@
 import Vue from 'vue'
-import App from './App.vue'
+import VueRouter from 'vue-router'
+//Import components
+import Hello from './components/Hello.vue'
+//Router configuration
+Vue.use(VueRouter);
+var router = new VueRouter();
+//Init the root component
+var App = Vue.extend({});
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
-})
+router.map({
+  '/': {
+    component: Hello
+  }
+});
+
+router.start(App, '#app');
