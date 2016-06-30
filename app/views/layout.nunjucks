@@ -10,7 +10,6 @@
   {% endif %}
 </head>
 <body>
-  {% block content %}{% endblock %}
   <script src="/app/dist/build.js" charset="utf-8"></script>
 </body>
 </html>
