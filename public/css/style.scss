@@ -2,9 +2,14 @@
 
 $primary: #0D47A1;
 
+*{
+  box-sizing: border-box;
+}
+
 body,html{
   font-family: 'Rubik', sans-serif;
   height: 100%;
+  background-color: #f6f9fc;
 }
 
 #app{
@@ -33,6 +38,7 @@ i{
 .btn{
   border-radius: 3px;
   padding: 0.6em;
+  margin: 0;
   &.btn-primary{
     background-color: $primary;
     color: #FFF;
@@ -43,20 +49,75 @@ i{
   &:focus{
     outline: 0;
   }
+  i{
+    font-size: 15px;
+  }
 }
 
 .input-wrapper{
+  position: relative;
   input{
     box-shadow: none;
     border: 0;
     border-bottom: 2px solid #EEE;
+    background-color: inherit;
     padding: 0;
     transition: all 0.5s ease-in-out;
     &:focus{
       box-shadow: none;
+      background-color: inherit;
       border: 0;
       outline: 0;
       border-bottom: 2px solid $primary;
+    }
+  }
+  &.input-icon{
+    i{
+      position: absolute;
+      top: 10px;
+      font-size: 20px;
+      left: 0;
+      color: rgba(0,0,0,0.3);
+    }
+    input{
+      padding-left: 30px;
+    }
+  }
+}
+
+table{
+  thead{
+    background-color: inherit;
+    border: 0;
+    border-bottom: 1px solid #EEE;
+    th{
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+  tbody{
+    background-color: inherit;
+    border: 0;
+    tr{
+      border: 0;
+      &:nth-child(even) {
+          background-color: inherit;
+      }
+      &:last-child{
+        td{
+          border-bottom: 0;
+        }
+      }
+      td{
+        border-right: 1px solid #EEE;
+        border-bottom: 1px solid #EEE;
+        font-weight: 400;
+        &:last-child{
+          border-right: 0;
+        }
+      }
     }
   }
 }

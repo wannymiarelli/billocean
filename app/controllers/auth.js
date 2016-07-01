@@ -47,7 +47,7 @@ router.post('/attempt', function (req, res, next) {
           if(result){
             //Attemp successful, generate the jwt token for the client
             var token = jwt.sign({id: user.id}, 'parolasegretissima');
-            return res.json(response.success(token));
+            return res.json(response.success({token: token, user: {email: user.email}}));
           }else{
             return res.json(response.error(401, 'Bad Login - invalid credentials.'));
           }

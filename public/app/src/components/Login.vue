@@ -76,6 +76,9 @@
   </div>
 </template>
 <script type="text/javascript">
+  import Auth from './services/auth';
+  import {router} from '../main';
+
   export default {
     data() {
       return {
@@ -91,11 +94,12 @@
       login() {
         this.loginAttempt = true;
         this.$http.post('/api/v1/auth/attempt', this.user).then(function(res){
-          console.log(res);
-          localStorage.setItem('token', res.data.data);
+          Auth.setUser(res.data.data);
           this.loginError = false;
           this.loginAttempt = false;
+          router.go('secure')
         }, function(err){
+          Auth.unsetUser();
           this.loginAttempt = false;
           this.loginError = true;
         })
